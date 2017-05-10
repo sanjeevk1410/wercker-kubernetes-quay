@@ -42,7 +42,7 @@ deploy:
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
-        command: create -f cities-controller.json
+        command: create -f cities-controller.json --username=admin --password=welcome1 --insecure-skip-tls-verify=true
 
     - kubectl:
         server: $KUBERNETES_MASTER
