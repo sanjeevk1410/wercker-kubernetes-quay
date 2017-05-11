@@ -51,7 +51,7 @@ deploy:
         insecure-skip-tls-verify: true
         command: create -f cities-service.json --client-certificate=apiserver-kubelet-client.crt --client-key=apiserver-kubelet-client.key
 
-    # Update the replica controller to $WERCKER_GIT_COMMIT
+    # Update the replica controller to $WERCKER_GIT_COMMIT 
     rolling-update:
     - kubectl:
         server: $KUBERNETES_MASTER
