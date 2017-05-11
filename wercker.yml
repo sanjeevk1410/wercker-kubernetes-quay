@@ -35,14 +35,14 @@ deploy:
         repository: quay.io/huanchen/wercker-kubernetes-quay
         registry: https://quay.io
 
-    # Run this to create the rc and service try 2
+    # Run this to create the rc and service try 3
     initialize:
     - kubectl:
         server: $KUBERNETES_MASTER
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
-        command: create -f cities-controller.json --username=admin --password=welcome1 --insecure-skip-tls-verify=true
+        command: create -f cities-controller.json --client-certificate=apiserver-kubelet-client.crt --client-key=apiserver-kubelet-client.key --insecure-skip-tls-verify=true
 
     - kubectl:
         server: $KUBERNETES_MASTER
