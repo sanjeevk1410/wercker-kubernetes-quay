@@ -58,5 +58,5 @@ deploy:
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
-        command: rolling-update cities --client-certificate=apiserver-kubelet-client.crt --client-key=apiserver-kubelet-client.key
+        command: rolling-update cities --image-pull-policy=Always --client-certificate=apiserver-kubelet-client.crt --client-key=apiserver-kubelet-client.key
         image: quay.io/huanchen/wercker-kubernetes-quay:$WERCKER_GIT_COMMIT
