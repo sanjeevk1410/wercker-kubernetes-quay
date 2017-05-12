@@ -35,7 +35,7 @@ deploy:
         repository: quay.io/huanchen/wercker-kubernetes-quay
         registry: https://quay.io
 
-    # Run this to create the rc and service test
+    # Run this to create the rc and service test2
     initialize:
     - kubectl:
         server: $KUBERNETES_MASTER
