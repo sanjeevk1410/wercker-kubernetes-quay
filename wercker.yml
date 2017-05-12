@@ -17,7 +17,7 @@ build:
         name: create cities-controller.json
         code: ./create_cities-controller.json.sh
 
-    # Copy binary to location that gets passed along to deploy
+    # Copy binary to location that gets passed along to deploy try3
     - script:
         name: copy binary
         code: cp app cities-service.json cities-controller.json apiserver-kubelet-client.crt apiserver-kubelet-client.key "$WERCKER_OUTPUT_DIR"
