@@ -38,6 +38,7 @@ deploy:
     # Run this to create the rc and service test2
     initialize:
     - kubectl:
+        name: dep-to-kuber
         server: $KUBERNETES_MASTER
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
@@ -45,6 +46,7 @@ deploy:
         command: create -f cities-controller.json --client-certificate=apiserver-kubelet-client.crt --client-key=apiserver-kubelet-client.key
 
     - kubectl:
+        name: dep-to-kuber
         server: $KUBERNETES_MASTER
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
@@ -54,6 +56,7 @@ deploy:
     # Update the replica controller to $WERCKER_GIT_COMMIT 
     rolling-update:
     - kubectl:
+        name: dep-to-kuber
         server: $KUBERNETES_MASTER
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
